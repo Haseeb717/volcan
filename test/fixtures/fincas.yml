@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region: one
+  soil: one
+  region: one
+  variety: one
+  altitiude: one
+  notes: MyText
+  finca: MyString
+
+two:
+  region: two
+  soil: two
+  region: two
+  variety: two
+  altitiude: two
+  notes: MyText
+  finca: MyString

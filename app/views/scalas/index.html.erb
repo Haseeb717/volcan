@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Scalas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Finca</th>
+      <th>Harvested</th>
+      <th>Qqt</th>
+      <th>Paid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scalas.each do |scala| %>
+      <tr>
+        <td><%= scala.finca %></td>
+        <td><%= scala.harvested %></td>
+        <td><%= scala.qqt %></td>
+        <td><%= scala.paid %></td>
+        <td><%= link_to 'Show', scala %></td>
+        <td><%= link_to 'Edit', edit_scala_path(scala) %></td>
+        <td><%= link_to 'Destroy', scala, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scala', new_scala_path %>

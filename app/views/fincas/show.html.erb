@@ -1,0 +1,115 @@
+<!-- ProviderPage -->
+<div class="ProviderPage">
+  <div class="container">
+
+    <%= render "/layouts/alerts" %>
+
+    <div class="row">
+
+      <div class="col-sm-4">
+        <strong>Finca:</strong>
+        <%= @finca.finca %>
+      </div>
+  
+      <div class="col-sm-4">
+        <strong>Soil:</strong>
+        <%= @finca.soil.title %>
+      </div>
+
+      <div class="col-sm-4">
+        <strong>Variety:</strong>
+        <%= @finca.variety.title %>
+      </div>
+    </div> <!-- row -->
+
+    <div class="row">
+
+      <div class="col-sm-4">
+        <strong>Altitiude:</strong>
+        <%= @finca.altitude.title %>
+      </div>
+
+      <div class="col-sm-4">
+        <strong>Region:</strong>
+        <%= @finca.region.title %>
+      </div>
+
+      <div class="col-sm-4"></div>
+    </div> <!-- row -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <strong>Notes:</strong>
+        <%= @finca.notes %>
+      </div>
+    </div>
+
+    <% if @finca.scalas.present? %>
+      <div class="row">
+        <hr>
+        <h3>Scalas</h3>
+
+        <div class="table-responsive border0">
+          <table class="table table-striped custab table-hover">
+            <thead>
+              <tr>
+                <th>Finca</th>
+                <th>Harvested</th>
+                <th>Qqt</th>
+                <th>Paid</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+              <% @scalas.each do |scala| %>
+                <tr>
+                  <td><%= scala.finca.finca %></td>
+                  <td><%= scala.harvested %></td>
+                  <td><%= scala.qqt %></td>
+                  <td><%= scala.paid %></td>
+                  <td><%= link_to 'Destroy', scala, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+          </table>
+        </div>
+        <br>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <%= form_for(@scala) do |f| %>
+
+        <hr />
+        <h3>Add Scala </h3>
+
+        <%= f.hidden_field :finca_id,:value=>@finca.id %>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Harvested</label><br>
+              <%= f.datetime_select :harvested,:class=>"form-control" %>
+            </div>
+          </div>
+      
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Quantity</label>
+              <%= f.number_field :qqt,:class=>"form-control",:placeholder=>"Quantity" %>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Paid</label>
+              <%= f.text_field :paid,:class=>"form-control",:placeholder=>"Paid" %>
+            </div>
+          </div>
+        </div> <!-- row -->
+
+        <p class="mt40 text-center"><%= f.submit "Save",:class=>"btn redbtn"%></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

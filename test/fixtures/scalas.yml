@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  finca: one
+  harvested: 2018-02-18 12:31:17
+  qqt: 1
+  paid: MyString
+
+two:
+  finca: two
+  harvested: 2018-02-18 12:31:17
+  qqt: 1
+  paid: MyString

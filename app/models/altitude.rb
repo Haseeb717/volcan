@@ -1,0 +1,2 @@
+class Altitude < ApplicationRecord
+end

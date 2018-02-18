@@ -1,0 +1,65 @@
+<!-- ProviderPage -->
+  <div class="ProviderPage">
+    <div class="container">
+      <h3>Add / Edit Finca </h3>
+      <hr />
+              
+      <%= form_for(finca) do |f| %>
+
+        <%= render "/layouts/alerts" %>
+
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Finca</label>
+              <%= f.text_field :finca,:class=>"form-control",:placeholder=>"Finca" %>
+            </div>
+          </div>
+      
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Region</label>
+              <%= f.select :region_id,Region.all.collect {|p| [ p.title, p.id ] }, { include_blank: "Select Region" }, {:class=>"form-control",:required=>true}  %>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Soil</label>
+              <%= f.select :soil_id,Soil.all.collect {|p| [ p.title, p.id ] }, { include_blank: "Select Soil" }, {:class=>"form-control",:required=>true}  %>
+            </div>
+          </div>
+     
+        </div> <!-- row -->
+
+        <div class="row">
+      
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Variety</label>
+              <%= f.select :variety_id,Variety.all.collect {|p| [ p.title, p.id ] }, { include_blank: "Select Variety" }, {:class=>"form-control",:required=>true}  %>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Altitude</label>
+              <%= f.select :altitude_id,Altitude.all.collect {|p| [ p.title, p.id ] }, { include_blank: "Select Altitude" }, {:class=>"form-control",:required=>true}  %>
+            </div>
+          </div>    
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="">Notes</label>
+              <%= f.text_area :notes,:class=>"form-control",:placeholder=>"Notes" %>
+            </div>
+          </div>         
+        </div> <!-- row -->
+
+        <p class="mt40 text-center"><%= f.submit "Save",:class=>"btn redbtn"%></p>
+      <% end %>
+
+    </div> <!-- container -->
+  </div>
+<!-- ProviderPage -->
