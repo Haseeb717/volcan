@@ -1,7 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Altitude.destroy_all
+Altitude.create(:title=>800)
+Altitude.create(:title=>900)
+Altitude.create(:title=>1000)
+Altitude.create(:title=>1100)
+Altitude.create(:title=>1200)
+Altitude.create(:title=>1300)
+Altitude.create(:title=>1400)
+Altitude.create(:title=>1500)
+Altitude.create(:title=>1600)
+Altitude.create(:title=>1700)
+Altitude.create(:title=>1800)
+Altitude.create(:title=>1900)
+Altitude.create(:title=>2000)
+
+Variety.destroy_all
+Variety.create(:title=>"Bourbon Amarillo")
+Variety.create(:title=>"Bourbon Rojo")
+Variety.create(:title=>"Caturra")
+Variety.create(:title=>"Catuai")
+Variety.create(:title=>"Pache")
+Variety.create(:title=>"Maragogype")
+Variety.create(:title=>"Typica")
+
+Region.destroy_all
+Region.create(:title=>"Acatenango")
+Region.create(:title=>"Antigua")
+Region.create(:title=>"Atitlan")
+Region.create(:title=>"Chimaltenango")
+Region.create(:title=>"Coban")
+Region.create(:title=>"Fraijanes")
+Region.create(:title=>"Huehuetenango")
+Region.create(:title=>"Jalapa")
+Region.create(:title=>"Pelancia")

@@ -26,21 +26,14 @@
 
           <div class="col-sm-4">
             <div class="form-group">
-              <label for="">Soil</label>
-              <%= f.select :soil_id,Soil.all.collect {|p| [ p.title, p.id ] }, { include_blank: "Select Soil" }, {:class=>"form-control",:required=>true}  %>
+              <label for="">Variety</label>
+              <%= f.select :variety_id,Variety.all.collect {|p| [ p.title, p.id ] }, { include_blank: "Select Variety" }, {:class=>"form-control",:required=>true}  %>
             </div>
           </div>
      
         </div> <!-- row -->
 
         <div class="row">
-      
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label for="">Variety</label>
-              <%= f.select :variety_id,Variety.all.collect {|p| [ p.title, p.id ] }, { include_blank: "Select Variety" }, {:class=>"form-control",:required=>true}  %>
-            </div>
-          </div>
 
           <div class="col-sm-4">
             <div class="form-group">
@@ -54,7 +47,9 @@
               <label for="">Notes</label>
               <%= f.text_area :notes,:class=>"form-control",:placeholder=>"Notes" %>
             </div>
-          </div>         
+          </div>
+
+          <div class="col-sm-4"></div>         
         </div> <!-- row -->
 
         <p class="mt40 text-center"><%= f.submit "Save",:class=>"btn redbtn"%></p>

@@ -20,7 +20,7 @@ body {
 .mynav {
     padding-top: 10px;
     padding-bottom: 5px;
-    //background: #007bff;
+    background: black;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
@@ -39,7 +39,7 @@ body {
     margin-right: 20px;
 }
 .mynav .navbar-right li a {
-    color: #484848;
+    color: white;
     font-size: 14px;
 }
 .mynav .navbar-right li a:hover {
