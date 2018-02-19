@@ -40,7 +40,7 @@
     <% if @finca.scalas.present? %>
       <div class="row">
         <hr>
-        <h3>Scalas</h3>
+        <h3>Receipts</h3>
 
         <div class="table-responsive border0">
           <table class="table table-striped custab table-hover">
@@ -72,7 +72,7 @@
       <%= form_for(@scala) do |f| %>
 
         <hr />
-        <h3>Add Scala </h3>
+        <h3>Add Receipt </h3>
 
         <%= f.hidden_field :finca_id,:value=>@finca.id %>
         <div class="row">
