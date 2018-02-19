@@ -232,7 +232,14 @@ body {
     padding: 10px 10px;
     color: #fff !important;
 }
-
+.qqt{    padding-top: 7px;
+    float: right;
+    font-weight: bold;}
+.custom_field{width: 90% !important;float: left;}
+.custom_q{width: 95% !important;float: right;}
+.q{padding-top: 7px;
+    float: left;
+    font-weight: bold;}
 /************ Extras ***********/
 
 .monsReg {

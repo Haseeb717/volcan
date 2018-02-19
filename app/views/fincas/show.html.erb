@@ -57,8 +57,8 @@
                 <tr>
                   <td><%= scala.finca.finca %></td>
                   <td><%= scala.harvested %></td>
-                  <td><%= scala.qqt %></td>
-                  <td><%= scala.paid %></td>
+                  <td><b>QQT </b><%= scala.qqt %></td>
+                  <td><b>Q </b><%= scala.paid %></td>
                   <td><%= link_to 'Destroy', scala, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
               <% end %>
@@ -86,14 +86,18 @@
           <div class="col-sm-4">
             <div class="form-group">
               <label for="">Quantity</label>
-              <%= f.number_field :qqt,:class=>"form-control",:placeholder=>"Quantity" %>
+
+              <%= f.number_field :qqt,:class=>"form-control custom_field",:placeholder=>"Quantity" %>
+              <span class="qqt">QQT</span>
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label for="">Paid</label>
-              <%= f.text_field :paid,:class=>"form-control",:placeholder=>"Paid" %>
+              
+              <%= f.text_field :paid,:class=>"form-control custom_q",:placeholder=>"Paid" %>
+              <span class="q">Q</span>
             </div>
           </div>
         </div> <!-- row -->
