@@ -13,20 +13,16 @@
             <th>Variety</th>
             <th>Altitude</th>
             <th>Notes</th>
-            <th colspan="3"></th>
+            
           </tr>
         </thead>
           <% @fincas.each do |finca| %>
-            <tr>
+            <tr data-link="<%= edit_finca_path(finca) %>" class="clickable">
               <td><%= finca.finca %></td>
               <td><%= finca.region.title if finca.region %></td>
               <td><%= finca.variety.title if finca.variety %></td>
               <td><%= finca.altitude.title if finca.altitude %></td>
               <td><%= finca.notes %></td>
-
-              <td><%= link_to 'Show', finca %></td>
-              <td><%= link_to 'Edit', edit_finca_path(finca) %></td>
-              <td><%= link_to 'Destroy', finca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
       </table>
@@ -37,3 +33,10 @@
   </div>
 </div>
 <!-- ProviderPage -->
+<script >
+  $(document).ready(function(){
+    $("tr[data-link]").click(function() {
+      window.location = $(this).data("link")
+    })
+  })
+</script>
