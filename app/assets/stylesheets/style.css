@@ -16,7 +16,7 @@ body {
     font-family: 'Montserrat-Regular';
 }
 /*********** Header ******/
-
+.special{color: black !important;}
 .mynav {
     padding-top: 10px;
     padding-bottom: 5px;

@@ -1,6 +1,6 @@
 class ScalasController < ApplicationController
   before_action :set_scala, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /scalas
   # GET /scalas.json
   def index

@@ -1,0 +1,22 @@
+
+<!-- login -->
+<div class="loginArea">
+   <div class="container">
+      <h2 class="text-center wow fadeInDown">Login your account</h2>
+      <div class="row">
+         <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3 col-md-offset-4 col-md-4 col-md-offset-4">
+            <div class="form-section wow fadeInUp">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= render "/layouts/alerts" %>
+                <%= f.email_field :email, autofocus: true,:class=>"form-control",:placeholder=>"Email Address ...",:required=>true  %>
+                <%= f.password_field :password, autocomplete: "off",:class=>"form-control",:placeholder=>"Password"  %>
+    
+                <%= f.submit "LOG IN",:class=>"btn loginBtn hvr-sink" %>
+              <% end %>
+              <br />
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- login -->

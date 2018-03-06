@@ -1,6 +1,6 @@
 class FincasController < ApplicationController
   before_action :set_finca, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /fincas
   # GET /fincas.json
   def index
