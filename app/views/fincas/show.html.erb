@@ -13,7 +13,7 @@
 
       <div class="col-sm-6">
         <strong>Variety:</strong>
-        <%= @finca.variety.title %>
+        <%= @finca.variety.title if @finca.variety %>
       </div>
     </div> <!-- row -->
 
@@ -21,12 +21,12 @@
 
       <div class="col-sm-6">
         <strong>Altitude:</strong>
-        <%= @finca.altitude.title %>
+        <%= @finca.altitude.title if @finca.altitude%>
       </div>
 
       <div class="col-sm-6">
         <strong>Region:</strong>
-        <%= @finca.region.title %>
+        <%= @finca.region.title if @finca.region%>
       </div>
     </div> <!-- row -->
 
@@ -36,6 +36,8 @@
         <%= @finca.notes %>
       </div>
     </div>
+    <hr>
+    <div><%= link_to "Edit Finca",edit_finca_path(@finca) %></div>
 
     <% if @finca.scalas.present? %>
       <div class="row">

@@ -16,7 +16,7 @@
           </tr>
         </thead>
           <% @fincas.each do |finca| %>
-            <tr data-link="<%= edit_finca_path(finca) %>" class="clickable">
+            <tr data-link="<%= finca_path(finca) %>" class="clickable">
               <td><%= finca.finca %></td>
               <td><%= finca.region.title if finca.region %></td>
               <td><%= finca.variety.title if finca.variety %></td>
