@@ -81,7 +81,7 @@
           <div class="col-sm-4">
             <div class="form-group">
               <label for="">Harvested</label><br>
-              <%= f.datetime_select :harvested,:class=>"form-control" %>
+              <%= f.datetime_select :harvested,:class=>"form-control", start_year: Time.now.year %>
             </div>
           </div>
       
