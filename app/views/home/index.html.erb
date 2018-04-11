@@ -1,36 +1,41 @@
-<!-- ProviderPage -->
-<div class="ProviderPage">
-  <div class="container">  
-    <h3>Fincas</h3>
+<% if user_signed_in? %>
+  <% if current_user.role.title == "ADMIN" %>
+    <!-- ProviderPage -->
+    <div class="ProviderPage">
+      <div class="container">  
+        <h3>Fincas</h3>
 
-    <div class="table-responsive border0">
-      <table class="table table-striped custab table-hover">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Region</th>
-            <th>Variety</th>
-            <th>Altitude</th>
-            <th>Notes</th>
-            
-          </tr>
-        </thead>
-          <% @fincas.each do |finca| %>
-            <tr data-link="<%= finca_path(finca) %>" class="clickable">
-              <td><%= finca.finca %></td>
-              <td><%= finca.region.title if finca.region %></td>
-              <td><%= finca.variety.title if finca.variety %></td>
-              <td><%= finca.altitude.title if finca.altitude %></td>
-              <td><%= finca.notes %></td>
-            </tr>
-          <% end %>
-      </table>
+        <div class="table-responsive border0">
+          <table class="table table-striped custab table-hover">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Region</th>
+                <th>Variety</th>
+                <th>Altitude</th>
+                <th>Notes</th>
+                
+              </tr>
+            </thead>
+              <% @fincas.each do |finca| %>
+                <tr data-link="<%= finca_path(finca) %>" class="clickable">
+                  <td><%= finca.finca %></td>
+                  <td><%= finca.region.title if finca.region %></td>
+                  <td><%= finca.variety.title if finca.variety %></td>
+                  <td><%= finca.altitude.title if finca.altitude %></td>
+                  <td><%= finca.notes %></td>
+                </tr>
+              <% end %>
+          </table>
+        </div>
+        <br>
+
+        <%= link_to 'New Finca', new_finca_path %>  
+      </div>
     </div>
-    <br>
 
-    <%= link_to 'New Finca', new_finca_path %>  
-  </div>
-</div>
+  <% end %>
+<% end %>
 <!-- ProviderPage -->
 <script >
   $(document).ready(function(){
