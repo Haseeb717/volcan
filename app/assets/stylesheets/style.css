@@ -39,6 +39,9 @@ body {
 .mynav .navbar-right li {
     margin-right: 20px;
 }
+.mynav .navbar-right li ul li a{
+    color: black;
+}
 .mynav .navbar-right li a {
     color: white;
     font-size: 14px;

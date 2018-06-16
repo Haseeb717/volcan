@@ -1,33 +1,38 @@
-<p id="notice"><%= notice %></p>
+<!-- ProviderPage -->
+<div class="ProviderPage">
+  <div class="container">  
+    <h3>Scalas</h3>
 
-<h1>Scalas</h1>
+    <div class="table-responsive border0">
+      <table class="table table-striped custab table-hover">
+        <thead>
+          <tr>
+            <th>Finca</th>
+            <th>Harvested</th>
+            <th>Qqt</th>
+            <th>Paid</th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Finca</th>
-      <th>Harvested</th>
-      <th>Qqt</th>
-      <th>Paid</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @scalas.each do |scala| %>
-      <tr>
-        <td><%= scala.finca %></td>
-        <td><%= scala.harvested %></td>
-        <td><%= scala.qqt %></td>
-        <td><%= scala.paid %></td>
-        <td><%= link_to 'Show', scala %></td>
-        <td><%= link_to 'Edit', edit_scala_path(scala) %></td>
-        <td><%= link_to 'Destroy', scala, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Scala', new_scala_path %>
+        <% @scalas.each do |scala| %>
+          <tr data-link="<%= finca_path(scala.finca) %>" class="clickable">
+            <td><%= scala.finca.finca %></td>
+            <td><%= scala.harvested %></td>
+            <td><%= scala.qqt %></td>
+            <td><%= scala.paid %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <br>
+    <%= link_to 'New Scala', new_scala_path %> 
+  </div>
+</div>
+<!-- ProviderPage -->
+<script >
+  $(document).ready(function(){
+    $("tr[data-link]").click(function() {
+      window.location = $(this).data("link")
+    })
+  })
+</script>
